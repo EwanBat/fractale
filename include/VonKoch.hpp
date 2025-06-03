@@ -16,6 +16,8 @@ public:
     VonKoch(int iterations) : iterations_(iterations) { }
     
     void generate() override {
+        list_point.clear();
+
         // Initialiser avec un segment de base, par exemple de (0,0) à (1,0)
         list_point.push_back(first); list_point.push_back(last);
         
@@ -58,7 +60,6 @@ public:
         file << std::fixed << std::setprecision(6); // Précision de sortie
 
         for (int i = 0; i < list_point.size();i++) {
-            std::cout << i << std::endl;
             Eigen::Vector2d point = list_point[i];
             file << point[0] << "," << point[1] << "\n";
         }

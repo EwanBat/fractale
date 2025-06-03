@@ -5,7 +5,7 @@
 // Fractale.hpp
 class Fractale {
 public:
-    std::string filename;
+    std::string filename, nom;
     virtual ~Fractale() = default;
     
     // Méthode pour générer les données de la fractale

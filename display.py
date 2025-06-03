@@ -13,7 +13,7 @@ def afficher_von_koch(filename):
     plt.title("Fractale de Von Koch")
     plt.show()
 
-################################# Autres fractales ########################
+################################# Affichage Newton ########################
 def afficher_newton(filename):
     data = np.loadtxt(filename, skiprows=1, delimiter=",")
     plt.figure("Fractale de Newton")
@@ -21,6 +21,15 @@ def afficher_newton(filename):
     plt.axis("equal")
     plt.title("Fractale de Newton")
     plt.colorbar(label='Nombre d’itérations')
+    plt.show()
+
+################################# Affichage Dragon ###########################
+def afficher_dragon(filename):
+    data = np.loadtxt(filename, skiprows=1, delimiter=",")
+    plt.figure("Fractale du dragon de Heighway")
+    plt.plot(data[:,0], data[:,1])
+    plt.axis("equal")
+    plt.title("Fractale du dragon de Heighway")
     plt.show()
 
 ################################# Main dispatcher #########################
@@ -40,6 +49,8 @@ def main():
         afficher_von_koch(filename)
     elif fractale == "newton":
         afficher_newton(filename)
+    elif fractale == "dragon":
+        afficher_dragon(filename)
     else:
         print(f"Erreur : fractale inconnue '{fractale}'")
         sys.exit(1)
