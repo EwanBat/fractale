@@ -12,13 +12,12 @@ Ce projet permet de générer et d'afficher différentes fractales en C++ et Pyt
 - **CMakeLists.txt** : Fichier de configuration pour la compilation avec CMake.
 
 ## Compilation (C++)
-
-```text
+```
 mkdir build
 cd build
 cmake ..
 make
-
+```
 L'exécutable sera généré dans le dossier build/.
 
 Utilisation des scripts Python
