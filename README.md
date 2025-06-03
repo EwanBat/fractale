@@ -13,7 +13,7 @@ Ce projet permet de générer et d'afficher différentes fractales en C++ et Pyt
 
 ## Compilation (C++)
 
-```sh
+```text
 mkdir build
 cd build
 cmake ..
@@ -25,8 +25,8 @@ Utilisation des scripts Python
 Depuis le fichier :
 python3 [display.py]
 
-Auteurs
+## Auteurs
 BATAILLE Ewan
 
-Licence
+## Licence
 Ce projet est sous licence MPL 2.0 (voir les fichiers sources pour plus de détails).

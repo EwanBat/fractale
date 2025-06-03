@@ -1,4 +1,5 @@
 # Ignore fichier et dossier
 ./fractale_python
+./build
 
 *.txt
