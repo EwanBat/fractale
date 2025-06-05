@@ -192,6 +192,7 @@ CMakeFiles/fractal.dir/src/main.cpp.o: /mnt/d/Informatique/Fractale/src/main.cpp
   /mnt/d/Informatique/Fractale/include/Eigen/src/misc/Kernel.h \
   /mnt/d/Informatique/Fractale/include/Eigen/src/misc/RealSvd2x2.h \
   /mnt/d/Informatique/Fractale/include/Fractale.hpp \
+  /mnt/d/Informatique/Fractale/include/Newton.hpp \
   /mnt/d/Informatique/Fractale/include/VonKoch.hpp \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
@@ -759,6 +760,8 @@ CMakeFiles/fractal.dir/src/main.cpp.o: /mnt/d/Informatique/Fractale/src/main.cpp
 
 /usr/include/c++/13/bits/stl_algobase.h:
 
+/usr/include/c++/13/bits/sstream.tcc:
+
 /usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h:
 
 /mnt/d/Informatique/Fractale/include/Eigen/src/Core/util/Constants.h:
@@ -794,6 +797,8 @@ CMakeFiles/fractal.dir/src/main.cpp.o: /mnt/d/Informatique/Fractale/src/main.cpp
 /usr/include/c++/13/bits/locale_facets_nonio.h:
 
 /mnt/d/Informatique/Fractale/include/Eigen/QR:
+
+/mnt/d/Informatique/Fractale/include/Newton.hpp:
 
 /mnt/d/Informatique/Fractale/include/Eigen/src/Core/BooleanRedux.h:
 
@@ -1052,8 +1057,6 @@ CMakeFiles/fractal.dir/src/main.cpp.o: /mnt/d/Informatique/Fractale/src/main.cpp
 /mnt/d/Informatique/Fractale/include/Eigen/src/Core/CwiseTernaryOp.h:
 
 /mnt/d/Informatique/Fractale/include/Eigen/src/Householder/HouseholderSequence.h:
-
-/usr/include/c++/13/bits/sstream.tcc:
 
 /mnt/d/Informatique/Fractale/include/Eigen/Eigenvalues:
 

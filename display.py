@@ -16,11 +16,11 @@ def afficher_von_koch(filename):
 ################################# Affichage Newton ########################
 def afficher_newton(filename):
     data = np.loadtxt(filename, skiprows=1, delimiter=",")
+    RGB = data[:, 2:5] / 255.0  # Normalisation des couleurs RGB
     plt.figure("Fractale de Newton")
-    plt.scatter(data[:,0], data[:,1], c=data[:,2], cmap='plasma', s=1)
+    plt.scatter(data[:,1], data[:,0], c=RGB)
     plt.axis("equal")
     plt.title("Fractale de Newton")
-    plt.colorbar(label='Nombre d’itérations')
     plt.show()
 
 ################################# Affichage Dragon ###########################

@@ -7,6 +7,7 @@
 #include "../include/Fractale.hpp"
 #include "../include/VonKoch.hpp"
 #include "../include/Dragon.hpp"
+#include "../include/Newton.hpp" // Si implémenté
 
 
 // Fonction de sélection
@@ -14,6 +15,7 @@ std::unique_ptr<Fractale> choisirFractale() {
     std::cout << "=== Sélection de fractale ===\n";
     std::cout << "1. Von Koch\n";
     std::cout << "2. Dragon de Heighway\n";
+    std::cout << "3. Newton\n"; // Option pour Newton, si implémentée
     std::cout << "Votre choix : ";
 
     int choix;
@@ -50,6 +52,22 @@ std::unique_ptr<Fractale> choisirFractale() {
             std::string filename = "../data/dragon_data.txt", nom = "dragon";
             fractale->filename = filename; fractale->nom = nom;
 
+            return fractale;
+        }
+
+        case 3: {
+            int iterations;
+            std::cout << "Nombre d’itérations pour Newton : ";
+            std::cin >> iterations;
+
+            auto fractale = std::make_unique<Newton>(iterations);
+
+            std::cout << "p-ième racine de l'unité pour la fractale de Newton : ";
+            std::cin >> fractale->ordre;
+
+            std::string filename = "../data/newton_data.txt", nom = "newton";
+            fractale->filename = filename; fractale->nom = nom;
+            
             return fractale;
         }
         

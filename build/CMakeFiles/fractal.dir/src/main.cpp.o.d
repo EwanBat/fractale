@@ -428,4 +428,5 @@ CMakeFiles/fractal.dir/src/main.cpp.o: \
  /mnt/d/Informatique/Fractale/src/../include/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h \
  /mnt/d/Informatique/Fractale/src/../include/Eigen/src/Eigenvalues/./RealQZ.h \
  /mnt/d/Informatique/Fractale/src/../include/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
- /mnt/d/Informatique/Fractale/src/../include/Dragon.hpp
+ /mnt/d/Informatique/Fractale/src/../include/Dragon.hpp \
+ /mnt/d/Informatique/Fractale/src/../include/Newton.hpp

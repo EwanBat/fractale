@@ -193,6 +193,7 @@ CMakeFiles/fractal.dir/src/main.cpp.o
  /mnt/d/Informatique/Fractale/include/Eigen/src/misc/Kernel.h
  /mnt/d/Informatique/Fractale/include/Eigen/src/misc/RealSvd2x2.h
  /mnt/d/Informatique/Fractale/include/Fractale.hpp
+ /mnt/d/Informatique/Fractale/include/Newton.hpp
  /mnt/d/Informatique/Fractale/include/VonKoch.hpp
  /usr/include/alloca.h
  /usr/include/asm-generic/errno-base.h
