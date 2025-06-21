@@ -52,7 +52,14 @@ public:
                     z = newton_step(z.real(), z.imag());
                     count++;
                 }
-
+                
+                if (count == 100) {
+                    // Si on n'a pas convergé, on colorie en noir
+                    image(0, i * iterations_ + j) = 0;
+                    image(1, i * iterations_ + j) = 0;
+                    image(2, i * iterations_ + j) = 0;
+                    continue;
+                }
                 Eigen::Vector3d color = color_map(z);
                 image(0, i * iterations_ + j) = static_cast<unsigned char>(color[0] * 255);
                 image(1, i * iterations_ + j) = static_cast<unsigned char>(color[1] * 255);
@@ -126,6 +133,36 @@ private:
     Eigen::Vector3d color_map(const std::complex<double>& z) const {
         double angle = std::arg(z);
         double norm = std::abs(z);
+
+        if (ordre == 3) {
+            // Racines du polynôme z^3 - 1 : 1, exp(2iπ/3), exp(4iπ/3)
+            // On associe une couleur à chaque racine
+            const double eps = 1e-2;
+            std::complex<double> racines[3] = {
+                std::polar(1.0, 0.0),
+                std::polar(1.0, 2.0 * M_PI / 3.0),
+                std::polar(1.0, 4.0 * M_PI / 3.0)
+            };
+            Eigen::Vector3d couleurs[3] = {
+                Eigen::Vector3d(91./255, 206./255, 250./255), // Rouge
+                Eigen::Vector3d(245./255, 169./255, 184./255), // Vert
+                Eigen::Vector3d(1, 1, 1)  // Bleu
+            };
+            int idx = 0;
+            double min_dist = std::abs(z - racines[0]);
+            for (int i = 1; i < 3; ++i) {
+                double dist = std::abs(z - racines[i]);
+                if (dist < min_dist) {
+                    min_dist = dist;
+                    idx = i;
+                }
+            }
+            // Optionnel : moduler la luminosité selon la norme (pour l'effet)
+            double lum = std::min(1.0, 1.0 / (1.0 + 0.3 * std::abs(norm - 1.0)));
+            return couleurs[idx] * lum;
+        }
+
+        // Cas général : dégradé selon l'argument
         return Eigen::Vector3d(
             0.5 + 0.5 * std::cos(angle + 0.0),
             0.5 + 0.5 * std::cos(angle + 2.0 * M_PI / 3.0),

@@ -59,7 +59,7 @@ std::unique_ptr<Fractale> choisirFractale() {
 
         case 3: {
             int iterations;
-            std::cout << "Nombre d’itérations pour Newton : (Conseillé 100 pour les plus faibles ordinateurs)";
+            std::cout << "Nombre d’itérations pour Newton : (Conseillé 100 pour les plus faibles ordinateurs) ";
             std::cin >> iterations;
 
             auto fractale = std::make_unique<Newton>(iterations);
