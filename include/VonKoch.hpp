@@ -8,13 +8,34 @@
 #include "Fractale.hpp"
 #include "Eigen/Dense"
 
+/**
+ * @brief Classe représentant la courbe de Von Koch (flocon de Koch).
+ *
+ * Principe : La courbe de Von Koch est une fractale construite par itérations successives.
+ * À chaque étape, chaque segment est remplacé par quatre segments formant une "pointe" en triangle équilatéral,
+ * ce qui complexifie la courbe à chaque itération et fait émerger la structure fractale.
+ *
+ * Fonctions principales :
+ *  - generate() : génère les points de la courbe de Von Koch selon le nombre d'itérations choisi.
+ *  - exportData() : exporte les points générés dans un fichier texte.
+ */
 class VonKoch : public Fractale {
 public:
-    Eigen::Vector2d first, last;
-    int iterations_;
+    Eigen::Vector2d first, last; ///< Extrémités du segment initial
+    int iterations_;             ///< Nombre d'itérations
 
+    /**
+     * @brief Constructeur
+     * @param iterations Nombre d'itérations pour la génération de la fractale
+     */
     VonKoch(int iterations) : iterations_(iterations) { }
     
+    /**
+     * @brief Génère les points de la courbe de Von Koch.
+     *
+     * Le segment initial est défini par first et last. À chaque itération,
+     * chaque segment est transformé en quatre segments selon la règle de Von Koch.
+     */
     void generate() override {
         list_point.clear();
 
@@ -47,6 +68,11 @@ public:
         }
     }
     
+    /**
+     * @brief Exporte les points générés dans un fichier texte.
+     *
+     * Le fichier contient les coordonnées x et y de chaque point généré.
+     */
     void exportData() const override {
         std::ofstream file(filename);
 
@@ -66,8 +92,9 @@ public:
 
         file.close();
         std::cout << "Données exportées vers : " << filename << std::endl;
-        }
+    }
     
 private:
+    /// Liste des points générés pour la courbe de Von Koch
     std::vector<Eigen::Vector2d> list_point;
 };

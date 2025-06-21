@@ -7,7 +7,8 @@
 #include "../include/Fractale.hpp"
 #include "../include/VonKoch.hpp"
 #include "../include/Dragon.hpp"
-#include "../include/Newton.hpp" // Si implémenté
+#include "../include/Newton.hpp" 
+#include "../include/Barnsley.hpp"
 
 
 // Fonction de sélection
@@ -15,7 +16,8 @@ std::unique_ptr<Fractale> choisirFractale() {
     std::cout << "=== Sélection de fractale ===\n";
     std::cout << "1. Von Koch\n";
     std::cout << "2. Dragon de Heighway\n";
-    std::cout << "3. Newton\n"; // Option pour Newton, si implémentée
+    std::cout << "3. Newton\n";
+    std::cout << "4. Barnsley\n";
     std::cout << "Votre choix : ";
 
     int choix;
@@ -24,7 +26,7 @@ std::unique_ptr<Fractale> choisirFractale() {
     switch (choix) {
         case 1: {
             int iterations;
-            std::cout << "Nombre d’itérations pour Von Koch : ";
+            std::cout << "Nombre d’itérations pour Von Koch : (Conseillé 4 pour les plus faibles ordinateurs) ";
             std::cin >> iterations;
 
             auto fractale = std::make_unique<VonKoch>(iterations);
@@ -41,7 +43,7 @@ std::unique_ptr<Fractale> choisirFractale() {
         
         case 2: {
             int iterations;
-            std::cout << "Nombre d’itérations pour le dragon de Heighway : ";
+            std::cout << "Nombre d’itérations pour le dragon de Heighway : (Conseillé 8 pour les plus faibles ordinateurs) ";
             std::cin >> iterations;
 
             auto fractale = std::make_unique<Dragon>(iterations);
@@ -57,7 +59,7 @@ std::unique_ptr<Fractale> choisirFractale() {
 
         case 3: {
             int iterations;
-            std::cout << "Nombre d’itérations pour Newton : ";
+            std::cout << "Nombre d’itérations pour Newton : (Conseillé 100 pour les plus faibles ordinateurs)";
             std::cin >> iterations;
 
             auto fractale = std::make_unique<Newton>(iterations);
@@ -68,6 +70,19 @@ std::unique_ptr<Fractale> choisirFractale() {
             std::string filename = "../data/newton_data.txt", nom = "newton";
             fractale->filename = filename; fractale->nom = nom;
             
+            return fractale;
+        }
+
+        case 4: {
+            int iterations;
+            std::cout << "Nombre d’itérations pour Barnsley : (Conseillé 5000 pour les plus faibles ordinateurs) ";
+            std::cin >> iterations;
+
+            auto fractale = std::make_unique<Barnsley>(iterations);
+
+            std::string filename = "../data/barnsley_data.txt", nom = "barnsley";
+            fractale->filename = filename; fractale->nom = nom;
+
             return fractale;
         }
         

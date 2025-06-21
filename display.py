@@ -32,6 +32,16 @@ def afficher_dragon(filename):
     plt.title("Fractale du dragon de Heighway")
     plt.show()
 
+################################# Affichage Barnsley ############################
+def afficher_barnsley(filename):
+    data = np.loadtxt(filename, skiprows=1, delimiter=",")
+    print(data)
+    plt.figure("Fractale de Barnsley")
+    plt.scatter(data[:,0], data[:,1], s=0.1, color = "green")
+    plt.axis("equal")
+    plt.title("Fractale de Barnsley")
+    plt.show()
+
 ################################# Main dispatcher #########################
 def main():
     if len(sys.argv) != 3:
@@ -51,6 +61,8 @@ def main():
         afficher_newton(filename)
     elif fractale == "dragon":
         afficher_dragon(filename)
+    elif fractale == "barnsley":
+        afficher_barnsley(filename)
     else:
         print(f"Erreur : fractale inconnue '{fractale}'")
         sys.exit(1)
