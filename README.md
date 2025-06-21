@@ -1,5 +1,5 @@
 # Fractale
-![Exemple de fractale](image//Fractale_de_Barnsley.png)
+<img src="image/Fractale_de_Barnsley.png" alt="Exemple de fractale" width="300"/>
 Ce projet permet de générer et d'afficher différentes fractales en C++ et Python. Il n'est pas fait pour générer des images de hautes résolutions mais de découvrir différents types de fractale et l'implémentation des différents processus mathématiques permettant de les observer.
 
 ## Structure du projet
