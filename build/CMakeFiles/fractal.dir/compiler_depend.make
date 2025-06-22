@@ -193,6 +193,7 @@ CMakeFiles/fractal.dir/src/main.cpp.o: /mnt/d/Informatique/Fractale/src/main.cpp
   /mnt/d/Informatique/Fractale/include/Eigen/src/misc/Kernel.h \
   /mnt/d/Informatique/Fractale/include/Eigen/src/misc/RealSvd2x2.h \
   /mnt/d/Informatique/Fractale/include/Fractale.hpp \
+  /mnt/d/Informatique/Fractale/include/Levy.hpp \
   /mnt/d/Informatique/Fractale/include/Newton.hpp \
   /mnt/d/Informatique/Fractale/include/VonKoch.hpp \
   /usr/include/alloca.h \
@@ -1122,6 +1123,10 @@ CMakeFiles/fractal.dir/src/main.cpp.o: /mnt/d/Informatique/Fractale/src/main.cpp
 
 /mnt/d/Informatique/Fractale/include/Eigen/src/Core/CoreEvaluators.h:
 
+/usr/include/c++/13/bits/shared_ptr.h:
+
+/mnt/d/Informatique/Fractale/include/Eigen/src/Core/Transpositions.h:
+
 /mnt/d/Informatique/Fractale/include/Eigen/src/Core/CoreIterators.h:
 
 /mnt/d/Informatique/Fractale/include/Eigen/src/Core/Fuzzy.h:
@@ -1342,6 +1347,8 @@ CMakeFiles/fractal.dir/src/main.cpp.o: /mnt/d/Informatique/Fractale/src/main.cpp
 
 /mnt/d/Informatique/Fractale/include/Eigen/src/SVD/SVDBase.h:
 
+/mnt/d/Informatique/Fractale/include/Levy.hpp:
+
 /mnt/d/Informatique/Fractale/include/Eigen/src/Geometry/arch/Geometry_SIMD.h:
 
 /usr/include/c++/13/backward/binders.h:
@@ -1467,7 +1474,3 @@ CMakeFiles/fractal.dir/src/main.cpp.o: /mnt/d/Informatique/Fractale/src/main.cpp
 /usr/include/c++/13/random:
 
 /usr/include/c++/13/bits/random.tcc:
-
-/mnt/d/Informatique/Fractale/include/Eigen/src/Core/Transpositions.h:
-
-/usr/include/c++/13/bits/shared_ptr.h:
