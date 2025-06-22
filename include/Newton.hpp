@@ -144,9 +144,9 @@ private:
                 std::polar(1.0, 4.0 * M_PI / 3.0)
             };
             Eigen::Vector3d couleurs[3] = {
-                Eigen::Vector3d(91./255, 206./255, 250./255), // Rouge
-                Eigen::Vector3d(245./255, 169./255, 184./255), // Vert
-                Eigen::Vector3d(1, 1, 1)  // Bleu
+                Eigen::Vector3d(0., 105., 148.) / 255,
+                Eigen::Vector3d(32., 178., 170.) / 255,
+                Eigen::Vector3d(238., 214., 175.) / 255
             };
             int idx = 0;
             double min_dist = std::abs(z - racines[0]);

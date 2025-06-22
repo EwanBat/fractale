@@ -58,6 +58,19 @@ def afficher_barnsley(filename):
     plt.title("Fractale de Barnsley")
     plt.show()
 
+################################ Affichage Levy ##############################
+def afficher_levy(filename):
+    data = np.loadtxt(filename, skiprows=1, delimiter=",")
+    plt.figure("Fractale de Lévy")
+    plt.plot(data[:,0], data[:,1])
+    plt.xticks([])
+    plt.yticks([])
+    plt.xlim(np.min(data[:,0]), np.max(data[:,0]))
+    plt.ylim(np.min(data[:,1]), np.max(data[:,1]))
+    plt.gca().set_aspect('equal', adjustable='box')
+    plt.title("Fractale de Lévy")
+    plt.show()
+
 ################################# Main dispatcher #########################
 def main():
     if len(sys.argv) != 3:
@@ -79,6 +92,8 @@ def main():
         afficher_dragon(filename)
     elif fractale == "barnsley":
         afficher_barnsley(filename)
+    elif fractale == "levy":
+        afficher_levy(filename)
     else:
         print(f"Erreur : fractale inconnue '{fractale}'")
         sys.exit(1)

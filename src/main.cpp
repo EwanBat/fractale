@@ -9,6 +9,7 @@
 #include "../include/Dragon.hpp"
 #include "../include/Newton.hpp" 
 #include "../include/Barnsley.hpp"
+#include "../include/Levy.hpp"
 
 
 // Fonction de sélection
@@ -18,6 +19,7 @@ std::unique_ptr<Fractale> choisirFractale() {
     std::cout << "2. Dragon de Heighway\n";
     std::cout << "3. Newton\n";
     std::cout << "4. Barnsley\n";
+    std::cout << "5. Levy\n";
     std::cout << "Votre choix : ";
 
     int choix;
@@ -81,6 +83,22 @@ std::unique_ptr<Fractale> choisirFractale() {
             auto fractale = std::make_unique<Barnsley>(iterations);
 
             std::string filename = "../data/barnsley_data.txt", nom = "barnsley";
+            fractale->filename = filename; fractale->nom = nom;
+
+            return fractale;
+        }
+
+        case 5: {
+            int iterations;
+            std::cout << "Nombre d’itérations pour Levy : (Conseillé 10 pour les plus faibles ordinateurs) ";
+            std::cin >> iterations;
+
+            auto fractale = std::make_unique<Levy>(iterations);
+
+            Eigen::Vector2d first(0,0), last(1,0); double Angle(M_PI/4); // Angle <= M_PI/3
+            fractale->first = first; fractale->last = last; fractale->Angle = Angle;
+
+            std::string filename = "../data/levy_data.txt", nom = "levy";
             fractale->filename = filename; fractale->nom = nom;
 
             return fractale;
