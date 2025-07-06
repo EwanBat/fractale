@@ -45,7 +45,7 @@ public:
                     double dy = point2[1] - point1[1];
                     
                     // Rotation du point intermédiaire
-                    Eigen::Vector2d summit = midPoint + Eigen::Vector2d(-dy, dx) * std::tan(Angle)/2;
+                    Eigen::Vector2d summit = midPoint + Eigen::Vector2d(-dy, dx) * std::tan(Angle / 2)/2;
 
                     new_points.push_back(point1);
                     new_points.push_back(summit);
@@ -82,6 +82,23 @@ public:
         std::cout << "Données exportées vers : " << filename << std::endl;
     }
     
+    /**
+     * @brief Affiche la dimension de Minkowski-Bouligand de la fractale de Levy.
+     *
+     * La dimension de cette fractale est connue pour être environ 2.0.
+     */
+    void dimensions() const override {
+        // La dimension de Minkowski-Bouligand pour la courbe de Levy
+        double nb_segments = list_point.size()-1, taille_segment = (list_point[1] - list_point[0]).norm();
+        double dimension_iter = std::log(nb_segments) / std::log(1./taille_segment);
+        
+        double dimension_th = std::log(2.0) / std::log(2 * std::cos(Angle/2)); // Dimension théorique de la courbe de Levy
+        
+        std::cout << "Dimension de Minkowski-Bouligand pour la fractale de Levy : " << dimension_th << std::endl;
+        std::cout << "Dimension calculée : " << dimension_iter << std::endl;
+        std::cout << "Ratio : " << dimension_iter / dimension_th << std::endl;
+    }
+
 private:
     /// Liste des points générés pour la fractale de Levy
     std::vector<Eigen::Vector2d> list_point;

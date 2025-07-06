@@ -3,7 +3,7 @@ Ce projet permet de générer et d'afficher différentes fractales en C++ et Pyt
 
 Vous pouvez essayer de changement des paramètres dans la main pour obtenir des résultats différents.
 
-<img src="image/Fractale_de_Barnsley.png" alt="Exemple de fractale" width="300"/>
+<img src="image/Fractale_de_Lévy.png" alt="Exemple de fractale" width="300"/>
 
 ## Structure du projet
 

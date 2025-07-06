@@ -98,6 +98,16 @@ public:
         std::cout << "Données exportées vers " << filename << std::endl;
     }
     
+    /**
+     * @brief Affiche la dimension de Minkowski-Bouligand de la fractale de Newton.
+     *
+     * La dimension de cette fractale est connue pour être environ 2.0.
+     */
+    void dimensions() const override {
+        // La dimension de Minkowski-Bouligand pour la fractale de Newton est environ 2.0
+        std::cout << "Dimension de Minkowski-Bouligand pour la fractale de Newton : 2.0 (approximativement)" << std::endl;
+    }
+
 private:
     double xmin = -2.0, xmax = 2.0;
     double ymin = -2.0, ymax = 2.0;

@@ -50,7 +50,7 @@ std::unique_ptr<Fractale> choisirFractale() {
 
             auto fractale = std::make_unique<Dragon>(iterations);
 
-            Eigen::Vector2d origin(0,0), direction(1,0); double Angle(M_PI/2);
+            Eigen::Vector2d origin(0,0), direction(1,0); double Angle(M_PI/3); 
             fractale->origin = origin; fractale->direction = direction; fractale->Angle = Angle;
 
             std::string filename = "../data/dragon_data.txt", nom = "dragon";
@@ -95,7 +95,7 @@ std::unique_ptr<Fractale> choisirFractale() {
 
             auto fractale = std::make_unique<Levy>(iterations);
 
-            Eigen::Vector2d first(0,0), last(1,0); double Angle(M_PI/4); // Angle <= M_PI/3
+            Eigen::Vector2d first(0,0), last(1,0); double Angle(M_PI/2); // Angle entre les points est pi - 2*Angle
             fractale->first = first; fractale->last = last; fractale->Angle = Angle;
 
             std::string filename = "../data/levy_data.txt", nom = "levy";
@@ -129,6 +129,9 @@ int main() {
     if (result != 0) {
         std::cerr << "Erreur lors de l'affichage Python.\n";
     }
+
+    // Affichage de la dimension fractale
+    fractale->dimensions();
 
     return 0;
 }

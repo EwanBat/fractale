@@ -13,4 +13,7 @@ public:
     
     // Méthode pour exporter les données (par exemple une liste de segments ou de points)
     virtual void exportData() const = 0;
+
+    // Méthode pour afficher la dimensions fractale (Dimension de Minkowski-Bouligand)
+    virtual void dimensions() const = 0;
 };

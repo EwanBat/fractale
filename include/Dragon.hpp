@@ -89,6 +89,11 @@ public:
         std::cout << "Données exportées vers : " << filename << std::endl;
     }
     
+    
+    void dimensions() const override {
+        std::cout << "De la manière dont elle est générée, la dimension de Minkowski-Bouligand du Dragon de Heighway n'est pas définie" << std::endl;
+    }
+    
 private:
     /// Liste des points générés pour la fractale du Dragon
     std::vector<Eigen::Vector2d> list_point;

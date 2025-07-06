@@ -11,9 +11,7 @@ def afficher_von_koch(filename):
     plt.plot(data[:,0], data[:,1])
     plt.xticks([])
     plt.yticks([])
-    plt.xlim(np.min(data[:,0]), np.max(data[:,0]))
-    plt.ylim(np.min(data[:,1]), np.max(data[:,1]))
-    plt.gca().set_aspect('equal', adjustable='box')
+    plt.gca().set_aspect('equal')
     plt.title("Fractale de Von Koch")
     plt.show()
 
@@ -25,9 +23,7 @@ def afficher_newton(filename):
     plt.scatter(data[:,1], data[:,0], c=RGB)
     plt.xticks([])
     plt.yticks([])
-    plt.xlim(np.min(data[:,1]), np.max(data[:,1]))
-    plt.ylim(np.min(data[:,0]), np.max(data[:,0]))
-    plt.gca().set_aspect('equal', adjustable='box')
+    plt.gca().set_aspect('equal')
     plt.title("Fractale de Newton")
     plt.show()
 
@@ -38,36 +34,30 @@ def afficher_dragon(filename):
     plt.plot(data[:,0], data[:,1])
     plt.xticks([])
     plt.yticks([])
-    plt.xlim(np.min(data[:,0]), np.max(data[:,0]))
-    plt.ylim(np.min(data[:,1]), np.max(data[:,1]))
-    plt.gca().set_aspect('equal', adjustable='box')
+    plt.gca().set_aspect('equal')
     plt.title("Fractale du dragon de Heighway")
     plt.show()
 
 ################################# Affichage Barnsley ############################
 def afficher_barnsley(filename):
     data = np.loadtxt(filename, skiprows=1, delimiter=",")
-    print(data)
     plt.figure("Fractale de Barnsley")
     plt.scatter(data[:,0], data[:,1], s=0.1, color = "green")
     plt.xticks([])
     plt.yticks([])
-    plt.xlim(np.min(data[:,0]), np.max(data[:,0]))
-    plt.ylim(np.min(data[:,1]), np.max(data[:,1]))
-    plt.gca().set_aspect('equal', adjustable='box')
+    plt.gca().set_aspect('equal')
     plt.title("Fractale de Barnsley")
     plt.show()
 
 ################################ Affichage Levy ##############################
 def afficher_levy(filename):
     data = np.loadtxt(filename, skiprows=1, delimiter=",")
+    print(data)
     plt.figure("Fractale de Lévy")
     plt.plot(data[:,0], data[:,1])
     plt.xticks([])
     plt.yticks([])
-    plt.xlim(np.min(data[:,0]), np.max(data[:,0]))
-    plt.ylim(np.min(data[:,1]), np.max(data[:,1]))
-    plt.gca().set_aspect('equal', adjustable='box')
+    plt.gca().set_aspect('equal')
     plt.title("Fractale de Lévy")
     plt.show()
 

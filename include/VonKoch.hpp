@@ -94,6 +94,18 @@ public:
         std::cout << "Données exportées vers : " << filename << std::endl;
     }
     
+    void dimensions() const override {
+        // La dimension de Minkowski-Bouligand pour la courbe de Von Koch est log(4)/log(3)
+        double nb_segments = list_point.size()-1, taille_segment = (list_point[1] - list_point[0]).norm();
+        
+        double dimension_iter = std::log(nb_segments) / std::log(1./taille_segment);
+        double dimension_th = std::log(4.0) / std::log(3.0);
+        
+        std::cout << "Dimension de Minkowski-Bouligand pour la fractale de Von Koch : " << dimension_th << std::endl;
+        std::cout << "Dimension calculée : " << dimension_iter << std::endl;
+        std::cout << "Ratio : " << dimension_iter / dimension_th << std::endl;
+    }
+
 private:
     /// Liste des points générés pour la courbe de Von Koch
     std::vector<Eigen::Vector2d> list_point;

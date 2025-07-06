@@ -80,6 +80,11 @@ public:
         std::cout << "Données exportées vers " << filename << std::endl;
     }
     
+    void dimensions() const override {
+        // La dimension de la fougère de Barnsley est connue pour être environ 2.0
+        std::cout << "Dimension de Minkowski-Bouligand : 2.0 (approximativement)" << std::endl;
+    }
+    
 private:
     // Liste des points générés
     std::vector<Eigen::Vector2d> list_point;
