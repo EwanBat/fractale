@@ -95,7 +95,7 @@ std::unique_ptr<Fractale> choisirFractale() {
 
             auto fractale = std::make_unique<Levy>(iterations);
 
-            Eigen::Vector2d first(0,0), last(1,0); double Angle(M_PI/2); // Angle entre les points est pi - 2*Angle
+            Eigen::Vector2d first(0,0), last(1,0); double Angle(M_PI/2);
             fractale->first = first; fractale->last = last; fractale->Angle = Angle;
 
             std::string filename = "../data/levy_data.txt", nom = "levy";
